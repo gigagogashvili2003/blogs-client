@@ -1,27 +1,28 @@
-import axios, { AxiosInstance, AxiosResponse, InternalAxiosRequestConfig } from "axios";
-import { toast } from "react-toastify";
+import axios, { AxiosInstance, AxiosResponse, InternalAxiosRequestConfig } from 'axios';
+import { toast } from 'react-toastify';
+import { API_BASE_URL } from '.';
 type AxiosResponsType = AxiosResponse<any, any>;
 type AxiosRequestConfigType = InternalAxiosRequestConfig<any>;
 
 export const axiosInstance: AxiosInstance = axios.create({
-  baseURL: "http://localhost:3000/",
+    baseURL: API_BASE_URL,
 });
 
 function axiosResponseHandler(response: AxiosResponsType) {
-  return response;
+    return response;
 }
 
 function axiosErrorHandler(error: any) {
-  const noToastHeader: boolean = error["config"]["headers"]["noToast"];
-  if (noToastHeader) return error;
+    const noToastHeader: boolean = error['config']['headers']['noToast'];
+    if (noToastHeader) return error;
 
-  const { message } = error;
+    const { message } = error;
 
-  return toast.error(message);
+    return toast.error(message);
 }
 
 function axiosRequestHandler(config: AxiosRequestConfigType) {
-  return config;
+    return config;
 }
 
 axiosInstance.interceptors.response.use(axiosResponseHandler, axiosErrorHandler);

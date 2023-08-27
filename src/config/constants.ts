@@ -1,5 +1,11 @@
-const AUTH_PATH = '/auth'
-const USER_PROFILE_PATH = '/user/profile'
-const USER_BLOGS_PATH = '/user/blogs'
+// ROUTES
+export const BASE_PATH = '/';
+export const AUTH_PATH = BASE_PATH + 'auth';
+export const USER_PROFILE_PATH = BASE_PATH + 'user/profile';
+export const USER_BLOGS_PATH = BASE_PATH + 'user/blogs';
 
-export { AUTH_PATH, USER_PROFILE_PATH, USER_BLOGS_PATH }
+// THEMES
+export const DEFAULT_THEME = 'dark';
+
+// API
+export const API_BASE_URL = 'http://localhost:3000/';
