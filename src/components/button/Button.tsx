@@ -1,6 +1,6 @@
 import { FC } from '@/types';
-import { IButton } from './button-interface';
-import { ButtonStyled } from './button-styled';
+import { IButton } from './Button.types';
+import { ButtonStyled } from './Button.styled';
 
 const Button: FC<IButton> = (props) => {
     const {
